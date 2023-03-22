@@ -7,13 +7,13 @@ namespace VoThuanLoi_BigSchool.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class CreateTableCourse : IMigrationMetadata
+    public sealed partial class FixDb : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateTableCourse));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(FixDb));
         
         string IMigrationMetadata.Id
         {
-            get { return "202303080300585_CreateTableCourse"; }
+            get { return "202303220421169_FixDb"; }
         }
         
         string IMigrationMetadata.Source

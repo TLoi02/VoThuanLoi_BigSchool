@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using VoThuanLoi_BigSchool.Models;
 using System.Data.Entity;
+using VoThuanLoi_BigSchool.ViewModels;
 
 namespace VoThuanLoi_BigSchool.Controllers
 {
@@ -22,7 +23,12 @@ namespace VoThuanLoi_BigSchool.Controllers
                 .Include(c => c.Category)
                 .Where(c => c.DateTime > DateTime.Now);
 
-            return View(upcommingCourses);
+            var viewModel = new CoursesViewModel {
+                UpcommingCourses = upcommingCourses,
+                ShowAction = User.Identity.IsAuthenticated
+            };
+
+            return View(viewModel);
         }
 
         public ActionResult About()
